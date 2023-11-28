@@ -1,42 +1,21 @@
-import java.util.Scanner;
 
 public class Programa {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        Pessoa pessoaUm = new Pessoa();
-        System.out.print("Digite seu nome: ");
-        pessoaUm.nome = sc.nextLine();
+        Imobiliaria imobiliaria = new Imobiliaria();
+        imobiliaria.setNome("Alisson Silva");
+        imobiliaria.setCompra("1000");
+        imobiliaria.setVenda("2000");
+        imobiliaria.setLocacao("Apartamento");
+        imobiliaria.setTipoDeImovel("Casa");
+        imobiliaria.setEndereco("Rua 123");
+        imobiliaria.setCep("12345");
+        imobiliaria.setBairro("Centro");
+        imobiliaria.setCidade("Sao Paulo");
 
-        System.out.print("Digite seu cpf: ");
-        pessoaUm.cpf = sc.nextLine();
-
-        System.out.print("Digite sua idade: ");
-        pessoaUm.idade = sc.nextInt();
-
-        System.out.print("Digite seu genero: ");
-        pessoaUm.sexo = sc.next().charAt(0);
-        sc.nextLine();
-        System.out.print("Digite seu endereço: ");
-        pessoaUm.enderco = sc.nextLine();
-
-
-
-
-
-
-
-        System.out.println("______________");
-        pessoaUm.seApresentar();
-        System.out.println("_______________");
-
-
-
-
-
+        imobiliaria.mostrarDados();
 
 
     }
-
 }
