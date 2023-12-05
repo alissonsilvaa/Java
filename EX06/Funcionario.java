@@ -18,8 +18,6 @@ matrícula e o nome de cada um deles.
 public class Funcionario {
     private String nome;
     private double salario;
-    private double addAumento;
-    private double ganhoAnual;
 
     public String getNome() {
         return nome;
@@ -34,29 +32,27 @@ public class Funcionario {
     }
 
     public void setSalario(double salario) {
-        this.salario = salario;
+        if (salario>0) {
+            this.salario = salario;
+        }
     }
-    /*public double getAddAumento() {
-        return addAumento;
-    }*/
 
-    public void AddAumento(double aumento) {
-        if(aumento >0){
+    public void addAumento(double aumento){
+        if (aumento>0){
             setSalario(getSalario()+aumento);
         }
-
     }
 
-    public double getGanhoAnual() {
-        return ganhoAnual;
-    }
-
-   public void GanhoAnual(double ganhoAnual) {
-        ganhoAnual = (getSalario() * 12);
+    public double ganhoAnual(){
+        return getSalario() * 12;
     }
 
     @Override
     public String toString() {
-        return "Funcionario{" + "nome=" + nome + ", salario=" + salario + ", addAumento=" + addAumento + ", ganhoAnual=" + ganhoAnual + '}';
+        return "Funcionario{" +
+                "nome='" + nome + '\'' +
+                ", salario=" + salario +
+                ", ganho anual=" + ganhoAnual() +
+                '}';
     }
 }
