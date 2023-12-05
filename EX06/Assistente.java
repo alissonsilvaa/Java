@@ -4,20 +4,24 @@ a. crie a classe Assistente, que também é um funcionário, e que
 possui um número de matrícula (faça os métodos GET e SET).
 Sobrescreva o método exibeDados().
  */
-public class Assistente extends Funcionario {
-    private int matricula;
+public class Assistente extends Funcionario{
+    private int numeroDeMatricula;
 
-    public int getMatricula() {
-        return matricula;
+    public int getNumeroDeMatricula() {
+        return numeroDeMatricula;
     }
 
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
+    public void setNumeroDeMatricula(int numeroDeMatricula) {
+        this.numeroDeMatricula = numeroDeMatricula;
     }
-   @Override
+
+    @Override
     public String toString() {
         return "Assistente{" +
-                "matricula=" + matricula +
-                "} " + super.toString();
-   }
+                "nome='" + getNome() + '\'' +
+                ", salario=" + getSalario() +
+                ", ganho anual=" + ganhoAnual() +
+                "numeroDeMatricula=" + numeroDeMatricula +
+                '}';
+    }
 }
