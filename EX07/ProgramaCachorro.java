@@ -1,20 +1,91 @@
 package EX07;
 
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class ProgramaCachorro {
+    static ArrayList<Animal> animais = new ArrayList<>();
+
+
+
     public static void main(String[] args) {
-        Animal dog = new Cachorro();
-        dog.setNome(" Totó ");
-        dog.setRaca(" Boxer ");
+        int opcao = 0;
+        Scanner sc = new Scanner(System.in);
 
-        Gato cat = new Gato();
-        cat.setNome(" Mia ");
-        cat.setRaca(" Persa ");
+        do {
+            System.out.println("CADASTRAR ANIMAIS\n" +
+                    "[1]Cadastrar Cachorro\n" +
+                    "[2]Cadastrar Gato\n" +
+                    "[3]Listar Animais\n" +
+                    "[0]Sair");
+            System.out.print("\tOpção: ");
+            opcao = sc.nextInt();
 
-        System.out.println(dog.caminha());
-        System.out.println();
-        System.out.println(cat.caminha());
+
+            if (opcao == 1){
+                cadastrarCachorro();
+            }
+            if (opcao == 3){
+                listarAnimais();
+            }
+            if (opcao == 2){
+                cadastrarGato();
+            }
+            if (opcao == 0){
+                System.out.println("\tSaindo...");
+                break;
+            }
+            if (opcao >=4){
+                System.out.println("Opcão Invalida");
+            }
 
 
+        }while (opcao != 0);
+
+    }//fim do main
+
+    public static void cadastrarCachorro(){
+        Scanner sc = new Scanner(System.in);
+        String nome = "";
+        String raca = "";
+
+        System.out.print("\tInforme o nome do cachorro: ");
+        nome = sc.nextLine();
+        System.out.print("\tInforme a raça: ");
+        raca = sc.nextLine();
+
+        Cachorro cachorro = new Cachorro(nome,raca);
+
+
+        animais.add(cachorro);
+        System.out.println("\tCachorro cadastrado com sucesso!");
 
     }
-}
+    public static void cadastrarGato(){
+        Scanner sc = new Scanner(System.in);
+        String nome = "";
+        String raca = "";
+
+        System.out.print("\tInforme o nome do gato: ");
+        nome = sc.nextLine();
+        System.out.print("\tInforme a raça: ");
+        raca = sc.nextLine();
+
+        Gato gato = new Gato(nome,raca);
+
+
+        animais.add(gato);
+        System.out.println("\tGato cadastrado com sucesso!");
+    }
+
+    public static void listarAnimais(){
+        for (int i = 0; i < animais.size(); i++){
+            System.out.println(animais.get(i));
+        }
+    }
+
+
+
+
+}//fim da classe
