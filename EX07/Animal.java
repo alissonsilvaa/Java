@@ -3,10 +3,9 @@ package EX07;
 public class Animal {
     private String nome;
     private String raca;
+
     public Animal(){
-
     }
-
     public Animal(String nome) {
         this.nome = nome;
     }
@@ -28,7 +27,16 @@ public class Animal {
     }
 
     public String caminha(){
-        return "Eu sou "+getNome()+"da raca "+getRaca()+"e estou caminhando";
+        return "Eu sou "+getNome()+
+                " da raça "+getRaca()+
+                " e estou caminhando.";
+    }
 
+    @Override
+    public String toString() {
+        return "\t\t_______________________________ " +
+                "\n\tTIPO: " + getClass() +
+                "\n\t\tNOME: " + getNome() +
+                "\n\t\tRAÇA: " + getRaca();
     }
 }
