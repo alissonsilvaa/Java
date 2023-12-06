@@ -1,9 +1,14 @@
 package EX07;
 
-public class Gato extends Animal {
+public class Gato extends Animal{
+
+    public Gato(String nome, String raca) {
+        setNome(nome);
+        setRaca(raca);
+    }
     public String mia(){
-        return "Eu sou " +getNome()+
-                " da raca " +getRaca()+
-                " e estou miando";
+        return "Eu sou "+getNome()+
+                " da raça "+getRaca()+
+                " e estou miando.";
     }
 }
