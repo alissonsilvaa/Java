@@ -1,1 +1,1 @@
-/*Curos de Programação em Java Senai*/
+/*Curso de Programação em Java Senai*/
